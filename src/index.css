@@ -1,13 +1,267 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Auth Page */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eef5ff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.auth-form {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.auth-form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.auth-form button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background: #357abd;
+}
+
+.switch {
+  margin-top: 10px;
+  text-align: center;
+  color: #4a90e2;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+
+/* SEARCH */
+.search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.stat-card.applied {
+  border-left: 5px solid #3498db;
+}
+
+.stat-card.interview {
+  border-left: 5px solid #f39c12;
+}
+
+.stat-card.rejected {
+  border-left: 5px solid #e74c3c;
+}
+
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body - LIGHT BLUE BACKGROUND */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #eef5ff;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+/* Form */
+.form {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.form input,
+.form select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74,144,226,0.3);
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Add Button */
+.form button {
+  width: 100%;
+  background: #4a90e2;
+  color: white;
+  font-weight: bold;
+}
+
+.form button:hover {
+  background: #357abd;
+  transform: scale(1.03);
+}
+
+/* Filter */
+.filter {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter button {
+  margin: 5px;
+  background: #dfe9f7;
+  color: #333;
+}
+
+.filter button:hover {
+  background: #4a90e2;
+  color: white;
+}
+
+/* JOB CARDS - IMPROVED */
+.card {
+  background: white;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  border-left: 5px solid #4a90e2;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* Company title */
+.card h3 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+/* Text styling */
+.card p {
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+}
+
+/* Status badge */
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  width: fit-content;
+}
+
+/* Status colors */
+.status.applied {
+  background: #d6eaff;
+  color: #3498db;
+}
+
+.status.interview {
+  background: #fff4d6;
+  color: #f39c12;
+}
+
+.status.rejected {
+  background: #ffd6d6;
+  color: #e74c3c;
+}
+
+/* Delete button */
+.card button {
+  align-self: flex-end;
+  margin-top: 8px;
+  background: #e74c3c;
+  color: white;
+  font-size: 13px;
+}
+
+.card button:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Empty state */
+p {
+  text-align: center;
+  color: #777;
 }
